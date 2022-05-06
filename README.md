@@ -1,6 +1,8 @@
 # Salesforce-Activity-Timeline
 Custom Activity Timeline that allows multiple standard and custom objects, displaying of related fields on date, subject and description, and editing.
 
+## Installation URL
+https://test.salesforce.com/packaging/installPackage.apexp?p0=04t3K0000009BMm
 
 ## Setup
 1. Navigate to a Lightning Page
