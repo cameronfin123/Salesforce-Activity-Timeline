@@ -10,6 +10,12 @@ Production: 	https://login.salesforce.com/packaging/installPackage.apexp?p0=04t3
 
 Sandbox: 	https://test.salesforce.com/packaging/installPackage.apexp?p0=04t3K0000009BMr
 
+### Version 1.1 API 53.0
+
+Production: https://login.salesforce.com/packaging/installPackage.apexp?p0=04t3K0000009BPC&isdtp=p1
+
+Sandbox: https://test.salesforce.com/packaging/installPackage.apexp?p0=04t3K0000009BPC&isdtp=p1
+
 ## Version 1.0:
 https://test.salesforce.com/packaging/installPackage.apexp?p0=04t3K0000009BMm
 
