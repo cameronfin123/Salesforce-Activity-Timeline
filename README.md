@@ -16,7 +16,7 @@ Production: https://login.salesforce.com/packaging/installPackage.apexp?p0=04t3K
 
 Sandbox: https://test.salesforce.com/packaging/installPackage.apexp?p0=04t3K0000009BPC&isdtp=p1
 
-## Version 1.0:
+## Version 1.0 **DEPRECATED**:
 https://test.salesforce.com/packaging/installPackage.apexp?p0=04t3K0000009BMm
 
 ## Setup
