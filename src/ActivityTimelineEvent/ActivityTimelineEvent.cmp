@@ -1,0 +1,68 @@
+<aura:component implements="force:hasRecordId" >
+    <aura:attribute name="object" type="SObject" />
+    
+    <aura:attribute name="objectLabel" type="String" />
+    <aura:attribute name="subjectFieldName" type="String" />
+    <aura:attribute name="subject" type="String" />
+    <aura:attribute name="descriptionFieldName" type="String" />
+    <aura:attribute name="description" type="String" />
+    <aura:attribute name="dateFieldName" type="String" />
+    <aura:attribute name="createdByName" type="String" />
+    <aura:attribute name="date" type="Date" />
+    
+    <aura:attribute name="iconName" type="String" default="standard:task" />
+    <aura:attribute name="showDescription" type="Boolean" default="true" />
+    
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <li>
+        <div class="isExpendable slds-timeline__item_expandable slds-timeline__item_task" aura:id="expId">
+            <div class="slds-media">
+                <div class="slds-media__figure">
+                    <button class="slds-button slds-button_icon" onclick="{!c.toggleAcitivity}" title="test"
+                            aria-controls="task-item-base" disabled="{!!v.showDescription}"  >
+                        <lightning:icon iconName="utility:switch"
+                                        size="x-small"
+                                        class="slds-button__icon slds-timeline__details-action-icon" />
+                    </button>
+                    <div class="slds-icon_container" title="task">
+                        <lightning:icon iconName="{!v.iconName}" size="small"/>
+                    </div>
+                </div>
+                <div class="slds-media__body">
+                    <div class="slds-grid slds-grid_align-spread slds-timeline__trigger">
+                        <div class="slds-grid slds-grid_vertical-align-center slds-truncate_container_75 slds-no-space">
+                            <a href="{!'/'+v.object.Id}">
+                                <h3 class="slds-truncate" title="{!v.Subject}">
+                                    <strong>{!v.subject}</strong>
+                                </h3>
+                            </a>
+                        </div>
+                        <div class="slds-grid">
+                            <div class="slds-grid slds-grid_vertical-align-center" >
+                            	<lightning:formattedDateTime value="{!v.date}"/>
+                            </div>
+                            <div class="slds-p-horizontal_small">
+                            	<lightning:buttonMenu alternativeText="Show menu" onselect="{!c.edit}">
+                                    <lightning:menuItem value="Edit" label="Edit" />
+                                </lightning:buttonMenu>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="slds-m-horizontal_xx-small">
+                        {!v.object.CreatedBy.Name} created a {!v.objectLabel}
+                    </p>
+                    <aura:if isTrue="{!v.showDescription}">
+                    	<article class="slds-box slds-timeline__item_details slds-theme_shade slds-m-top_x-small slds-m-horizontal_xx-small" id="task-item-base" aria-hidden="true">
+                            <ul class="slds-list_horizontal slds-wrap">
+                                <li class="slds-grid slds-grid_vertical slds-size_1-of-2 slds-p-bottom_small">
+                                    <span class="slds-text-title slds-p-bottom_x-small">Description</span>
+                                    <span class="slds-text-body_medium slds-truncate" title="{!v.Description}">{!v.description}</span>
+                                </li>
+                            </ul>
+                        </article>
+                    </aura:if>
+                </div>
+            </div>
+        </div>
+    </li>
+</aura:component>

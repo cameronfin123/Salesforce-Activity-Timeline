@@ -1,0 +1,45 @@
+<aura:component controller="ActivityTimelineController" implements="flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId" access="global" >
+    <aura:attribute name="sObjectNames" type="String" />
+    <aura:attribute name="relationshipFields" type="String" />
+    <aura:attribute name="dateFieldNames" type="String" />
+    <aura:attribute name="subjectFieldNames" type="String" />
+    <aura:attribute name="descriptionFieldNames" type="String" />
+    <aura:attribute name="iconNames" type="String" />
+    
+    <aura:attribute name="ActivityList" type="List" />
+    <aura:attribute name="showActivityList" type="Boolean" default="true"/>
+    
+    <aura:attribute name="ActiveSectionName" type="String" />
+    
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <div class="slds-box slds-theme_default noBorder">
+        <aura:if isTrue="{!v.showActivityList}">
+            <lightning:accordion aura:id="accordion"  allowMultipleSectionsOpen="true" activeSectionName="{!v.ActiveSectionName}">
+                <aura:iteration items="{!v.ActivityList}" var="activityWrapper">
+                    <lightning:accordionSection name="{!activityWrapper.name}" label="{!activityWrapper.name}">
+                        <aura:set attribute="body">
+                            <ul class="slds-timeline">
+                                <aura:iteration items="{!activityWrapper.values}" var="value">
+                                    <c:ActivityTimelineEvent object="{!value.activity}" 
+                                                             subjectFieldName="{!value.subjectFieldName}"
+                                                             descriptionFieldName="{!value.descriptionFieldName}"
+                                                             dateFieldName="{!value.dateFieldName}"
+                                                             objectLabel="{!value.sObjectName}"
+                                                             recordId="{!value.id}"
+                                                             iconName="{!value.iconName}"
+                                                             />
+                                </aura:iteration>
+                            </ul>
+                        </aura:set>
+                    </lightning:accordionSection>
+                </aura:iteration>
+            </lightning:accordion>
+            
+            <aura:set attribute="else">
+                <div class="slds-box">
+                	No records.
+                </div>
+            </aura:set>
+        </aura:if>
+    </div>    
+</aura:component>

@@ -1,0 +1,16 @@
+.THIS.noBorder {
+    border: 0;
+    padding:0;
+}
+
+.THIS .slds-accordion__summary-heading {
+	background:rgb(245,245,245);
+    padding:5px 10px 5px 10px;
+    border-radius: 3px;
+    font-weight: 700;
+    font-size: var(--lwc-fontSize3,0.8125rem);
+}
+        
+.THIS .slds-timeline__item_task:before {
+      background: rgb(245, 245,245);      
+}

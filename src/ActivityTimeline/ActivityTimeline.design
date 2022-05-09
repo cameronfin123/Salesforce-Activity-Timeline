@@ -1,0 +1,8 @@
+<design:component>
+    <design:attribute name="sObjectNames" label="sObject Names" description="Comma delimited list of object api names." required="true" />
+    <design:attribute name="relationshipFields" label="Relationships Fields" description="Comma delimited list of field api names relating the corrsponding object to current record." required="true" />
+    <design:attribute name="dateFieldNames" label="Date Fields" description="Comma delimited list of field api names for the date field on the corrsponding object." required="true" />
+    <design:attribute name="subjectFieldNames" label="Subject Fields" description="Comma delimited list of field api names for the subject field on the corrsponding object." required="false" />
+    <design:attribute name="descriptionFieldNames" label="Description Fields" description="Comma delimited list of field api names for the description field on the corrsponding object." required="false" />
+    <design:attribute name="iconNames" label="Customize Icons" description="Comma delimited list of stanard icon names" required="false" />
+</design:component>
