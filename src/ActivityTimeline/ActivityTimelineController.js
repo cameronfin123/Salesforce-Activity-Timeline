@@ -1,12 +1,12 @@
 ({
     doInit : function(component, event, helper) {
-        let relatedToId = component.get("v.recordId");
-        let relatedToFieldNamesString = component.get("v.relationshipFields");
-        let sObjectNamesString = component.get("v.sObjectNames");
-        let subjectFieldNamesString = component.get("v.subjectFieldNames");
-        let descriptionFieldNamesString = component.get("v.descriptionFieldNames");
-        let dateFieldNamesString = component.get("v.dateFieldNames");
-        let iconNamesFieldString = component.get("v.iconNames");
+        let relatedToId = component.get("v.recordId").replace(' ','');
+        let relatedToFieldNamesString = component.get("v.relationshipFields").replace(' ','');
+        let sObjectNamesString = component.get("v.sObjectNames").replace(' ','');
+        let subjectFieldNamesString = component.get("v.subjectFieldNames").replace(' ','');
+        let descriptionFieldNamesString = component.get("v.descriptionFieldNames").replace(' ','');
+        let dateFieldNamesString = component.get("v.dateFieldNames").replace(' ','');
+        let iconNamesFieldString = component.get("v.iconNames").replace(' ','');
         
         let relatedToFieldNames = relatedToFieldNamesString?relatedToFieldNamesString.split(','):[];
         let sObjectNames = sObjectNamesString?sObjectNamesString.split(','):[];
@@ -47,7 +47,7 @@
                     console.log(iconName);
                     if (tempParams.iconName != '' && tempParams.iconName != undefined && tempParams.iconName != null) {
                         console.log(tempParams.iconName);
-                        iconName = 'standard:' + tempParams.iconName;
+                        iconName = tempParams.iconName;
                     }
                     
                     records.forEach(function(element,index) {
