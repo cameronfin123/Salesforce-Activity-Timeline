@@ -9,6 +9,7 @@ Custom Activity Timeline that allows multiple standard and custom objects, displ
 - Added ability where spaces in the design fields doesn't prevent the component from working
 
 Production: https://login.salesforce.com/packaging/installPackage.apexp?p0=04t3K0000009BPM&isdtp=p1
+
 Sandbox: https://test.salesforce.com/packaging/installPackage.apexp?p0=04t3K0000009BPM&isdtp=p1
 
 ## Version 1.1:
