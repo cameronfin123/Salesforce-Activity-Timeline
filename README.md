@@ -6,7 +6,7 @@ Custom Activity Timeline that allows multiple standard and custom objects, displ
 ## Version 1.1:
 Fixed bug with date sorting when referencing a date field on a related object. Added more thorough testing for the apex class as well as execption catching to allow rendering of the component if there is query exception the backend (in the case of an invalid field). Added customizable icons.
 
-Production: 	https://salesforce.salesforce.com/packaging/installPackage.apexp?p0=04t3K0000009BMr
+Production: 	https://login.salesforce.com/packaging/installPackage.apexp?p0=04t3K0000009BMr
 
 Sandbox: 	https://test.salesforce.com/packaging/installPackage.apexp?p0=04t3K0000009BMr
 
