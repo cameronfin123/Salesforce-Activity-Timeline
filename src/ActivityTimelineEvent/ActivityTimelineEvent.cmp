@@ -30,9 +30,9 @@
                 </div>
                 <div class="slds-media__body">
                     <div class="slds-grid slds-grid_align-spread slds-timeline__trigger">
-                        <div class="slds-grid slds-grid_vertical-align-center slds-truncate_container_75 slds-no-space">
-                            <a style="width: 95%" href="{!'/'+v.object.Id}">
-                                <h3 class="slds-truncate" title="{!v.Subject}">
+                        <div class="slds-grid slds-grid_vertical-align-center slds-truncate_container_75 slds-no-space slds-has-flexi-truncate">
+                            <a style="width:95%" href="{!'/'+v.object.Id}">
+                                <h3 class="slds-has-flexi-truncate slds-truncate" title="{!v.Subject}">
                                     <strong>{!v.subject}</strong>
                                 </h3>
                             </a>

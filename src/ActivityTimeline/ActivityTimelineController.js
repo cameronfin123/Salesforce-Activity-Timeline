@@ -16,6 +16,7 @@
         let iconNames = iconNamesFieldString?iconNamesFieldString.split(','):[];
         
         let newActivityList = [];
+        let numberOfRecordsAdded = 0;
         
         for ( let i = 0; i < relatedToFieldNames.length; i++ ) {
             let action = component.get( "c.getSObjects" );
@@ -64,6 +65,7 @@
                             iconName: iconName
                         });
                     });
+                    numberOfRecordsAdded++;
                 } else {
                     console.log("This object doesn't exist.");
                     alert(`Issue processing this object. Check to ensure the api names are correct\n
@@ -74,7 +76,7 @@
                           dateFieldName: ${tempParams.dateFieldName}
                           `);
                 }
-                if ( i == (relatedToFieldNames.length - 1) ) {
+                if ( numberOfRecordsAdded == relatedToFieldNames.length ) {
                     newActivityList.sort(function(a,b){
                         let d1 = null;
                         if ( a.date != undefined ) { 
