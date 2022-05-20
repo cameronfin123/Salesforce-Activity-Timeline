@@ -1,5 +1,5 @@
 # Salesforce-Activity-Timeline
-Custom Activity Timeline that allows multiple standard and custom objects, displaying of related fields on date, subject and description, and editing.
+Custom Activity Timeline that allows multiple standard and custom objects, editing, and displaying of related fields on date, subject and description.
 
 ## Installation URL
 
