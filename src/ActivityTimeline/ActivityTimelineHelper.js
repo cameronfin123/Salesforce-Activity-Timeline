@@ -1,4 +1,16 @@
 ({
+    getAndParseField: function(component, fieldName) {
+        let fieldString = component.get(fieldName);
+        if ( fieldString == undefined || fieldString == null ) {
+            fieldString = '';
+        } else {
+			fieldString = fieldString.replace(' ','');      
+        }
+        
+        let fieldList = fieldString?fieldString.split(','):[];
+        
+        return fieldList;
+    },
 	getFormmattedDateHeader : function( inputDate ) {
         if ( inputDate === undefined || inputDate === null ) {
             return 'Upcoming & Overdue';

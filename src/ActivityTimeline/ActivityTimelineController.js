@@ -1,19 +1,13 @@
 ({
     doInit : function(component, event, helper) {
         let relatedToId = component.get("v.recordId").replace(' ','');
-        let relatedToFieldNamesString = component.get("v.relationshipFields").replace(' ','');
-        let sObjectNamesString = component.get("v.sObjectNames").replace(' ','');
-        let subjectFieldNamesString = component.get("v.subjectFieldNames").replace(' ','');
-        let descriptionFieldNamesString = component.get("v.descriptionFieldNames").replace(' ','');
-        let dateFieldNamesString = component.get("v.dateFieldNames").replace(' ','');
-        let iconNamesFieldString = component.get("v.iconNames").replace(' ','');
         
-        let relatedToFieldNames = relatedToFieldNamesString?relatedToFieldNamesString.split(','):[];
-        let sObjectNames = sObjectNamesString?sObjectNamesString.split(','):[];
-        let subjectFieldNames = subjectFieldNamesString?subjectFieldNamesString.split(','):[];
-        let descriptionFieldNames = descriptionFieldNamesString?descriptionFieldNamesString.split(','):[];
-        let dateFieldNames = dateFieldNamesString?dateFieldNamesString.split(','):[];
-        let iconNames = iconNamesFieldString?iconNamesFieldString.split(','):[];
+        let relatedToFieldNames = helper.getAndParseField(component,"v.relationshipFields");
+        let sObjectNames = helper.getAndParseField(component,"v.sObjectNames");
+        let subjectFieldNames = helper.getAndParseField(component,"v.subjectFieldNames");
+        let descriptionFieldNames = helper.getAndParseField(component,"v.descriptionFieldNames");
+        let dateFieldNames = helper.getAndParseField(component,"v.dateFieldNames");
+        let iconNames = helper.getAndParseField(component,"v.iconNames");
         
         let newActivityList = [];
         let numberOfRecordsAdded = 0;
@@ -44,12 +38,10 @@
                     let records = awc.records;
                     let objectLabel = awc.objectName;
                     let iconName = awc.iconName;
-                    console.log(iconName);
                     if (tempParams.iconName != '' && tempParams.iconName != undefined && tempParams.iconName != null) {
-                        console.log(tempParams.iconName);
                         iconName = tempParams.iconName;
                     }
-                    
+                    console.log(iconName);''
                     records.forEach(function(element,index) {
                         console.log(element);
                         //let s = helper.getFromattedDateHeader(element[tempParams.dateFieldName]);

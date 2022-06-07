@@ -18,7 +18,7 @@
         <div class="isExpendable slds-timeline__item_expandable slds-timeline__item_task" aura:id="expId">
             <div class="slds-media">
                 <div class="slds-media__figure">
-                    <button class="slds-button slds-button_icon" onclick="{!c.toggleAcitivity}" title="test"
+                    <button class="slds-button slds-button_icon" id="showDetailsButton" onclick="{!c.toggleAcitivity}" title="test"
                             aria-controls="task-item-base" disabled="{!!v.showDescription}"  >
                         <lightning:icon iconName="utility:switch"
                                         size="x-small"
