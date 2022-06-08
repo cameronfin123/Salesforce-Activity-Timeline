@@ -2,7 +2,7 @@
 Custom Activity Timeline that allows multiple standard and custom objects, editing, and displaying of related fields on date, subject and description.
 
 ![GitHub Logo](/images/Image1.png)
-*(Activity Timeline on Account. Show related Opportunities by CloseDate, related Contacts by CreatedDate, and related Cases by ClosedDate)*
+*(Activity Timeline on Account. Show related Opportunities by CloseDate, related Contacts by CreatedDate, and related Cases by ClosedDate with a custom icon)*
 
 ## Installation URL
 
